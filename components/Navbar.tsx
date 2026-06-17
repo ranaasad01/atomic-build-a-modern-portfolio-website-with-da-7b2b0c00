@@ -67,7 +67,7 @@ export default function Navbar() {
               className="flex items-center gap-2"
             >
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-indigo-500/25">
-                AM
+                TC
               </div>
               <span className="font-semibold text-white text-lg tracking-tight hidden sm:block">
                 {APP_NAME}
@@ -105,21 +105,18 @@ export default function Navbar() {
             <Link
               href={getHref(navCTA.href)}
               onClick={(e) => handleAnchorClick(e, navCTA.href)}
-              className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-all duration-200 shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+              className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-500 hover:bg-indigo-400 text-white text-sm font-medium transition-colors duration-200 shadow-lg shadow-indigo-500/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
             >
-              <motion.span whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }}>
-                {navCTA.label}
-              </motion.span>
+              {navCTA.label}
             </Link>
 
-            <motion.button
-              whileTap={{ scale: 0.92 }}
-              onClick={() => setMobileOpen((v) => !v)}
-              className="md:hidden p-2 rounded-lg text-white/70 hover:text-white hover:bg-white/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-              aria-label="Toggle menu"
+            <button
+              onClick={() => setMobileOpen((prev) => !prev)}
+              aria-label="Toggle mobile menu"
+              className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg text-white/70 hover:text-white hover:bg-white/5 transition-colors duration-200"
             >
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-            </motion.button>
+            </button>
           </div>
         </div>
       </nav>
@@ -135,38 +132,25 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: "easeInOut" }}
             className="md:hidden overflow-hidden bg-[#0f0f0f]/95 backdrop-blur-xl border-b border-white/5"
           >
-            <ul className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1">
-              {navLinks.map((link, i) => (
-                <motion.li
-                  key={link.href}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.06, duration: 0.25 }}
-                >
-                  <Link
-                    href={getHref(link.href)}
-                    onClick={(e) => handleAnchorClick(e, link.href)}
-                    className="block px-4 py-3 rounded-lg text-white/70 hover:text-white hover:bg-white/5 text-sm font-medium transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </motion.li>
-              ))}
-              <motion.li
-                initial={{ opacity: 0, x: -16 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.06, duration: 0.25 }}
-                className="pt-2"
-              >
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-col gap-1">
+              {navLinks.map((link) => (
                 <Link
-                  href={getHref(navCTA.href)}
-                  onClick={(e) => handleAnchorClick(e, navCTA.href)}
-                  className="block px-4 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium text-center transition-colors"
+                  key={link.href}
+                  href={getHref(link.href)}
+                  onClick={(e) => handleAnchorClick(e, link.href)}
+                  className="px-4 py-3 rounded-lg text-sm font-medium text-white/70 hover:text-white hover:bg-white/5 transition-colors duration-200"
                 >
-                  {navCTA.label}
+                  {link.label}
                 </Link>
-              </motion.li>
-            </ul>
+              ))}
+              <Link
+                href={getHref(navCTA.href)}
+                onClick={(e) => handleAnchorClick(e, navCTA.href)}
+                className="mt-2 px-4 py-3 rounded-lg bg-indigo-500 hover:bg-indigo-400 text-white text-sm font-medium text-center transition-colors duration-200"
+              >
+                {navCTA.label}
+              </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

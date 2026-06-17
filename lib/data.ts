@@ -1,9 +1,9 @@
-export const APP_NAME = "Alex Morgan";
+export const APP_NAME = "Toby Carlson";
 export const APP_TAGLINE = "Full-Stack Developer & Designer";
-export const APP_EMAIL = "hello@alexmorgan.dev";
-export const APP_GITHUB = "https://github.com/alexmorgan";
-export const APP_LINKEDIN = "https://linkedin.com/in/alexmorgan";
-export const APP_TWITTER = "https://twitter.com/alexmorgan";
+export const APP_EMAIL = "hello@tobycarlson.dev";
+export const APP_GITHUB = "https://github.com/tobycarlson";
+export const APP_LINKEDIN = "https://linkedin.com/in/tobycarlson";
+export const APP_TWITTER = "https://twitter.com/tobycarlson";
 
 export interface NavLink {
   label: string;

@@ -54,7 +54,7 @@ export default function Footer() {
           <motion.div variants={fadeInUp} className="space-y-4">
             <Link href="/" className="inline-flex items-center gap-2 group">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-indigo-500/20">
-                AM
+                TC
               </div>
               <span className="font-semibold text-white text-lg tracking-tight">
                 {APP_NAME}
@@ -96,7 +96,7 @@ export default function Footer() {
                   <Link
                     href={getHref(link.href)}
                     onClick={(e) => handleAnchorClick(e, link.href)}
-                    className="text-white/40 hover:text-white text-sm transition-colors duration-200 hover:translate-x-1 inline-block"
+                    className="text-white/40 hover:text-white text-sm transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -111,13 +111,13 @@ export default function Footer() {
               Get In Touch
             </h3>
             <p className="text-white/40 text-sm leading-relaxed">
-              Open to new opportunities, collaborations, and interesting projects.
+              Open to freelance projects, full-time roles, and interesting collaborations.
             </p>
             <a
               href={`mailto:${APP_EMAIL}`}
-              className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm font-medium transition-colors duration-200 group"
+              className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm font-medium transition-colors duration-200"
             >
-              <Mail size={14} className="group-hover:scale-110 transition-transform" />
+              <Mail size={14} />
               {APP_EMAIL}
             </a>
           </motion.div>
@@ -129,15 +129,13 @@ export default function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mt-10 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <p className="text-white/25 text-xs">
-            © {new Date().getFullYear()} {APP_NAME}. All rights reserved.
+            &copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved.
           </p>
           <p className="text-white/25 text-xs flex items-center gap-1">
-            Built with{" "}
-            <Heart size={11} className="text-indigo-400 fill-indigo-400" />{" "}
-            using Next.js & Framer Motion
+            Built with <Heart size={10} className="text-indigo-400 fill-indigo-400" /> using Next.js &amp; Tailwind CSS
           </p>
         </motion.div>
       </div>

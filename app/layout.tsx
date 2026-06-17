@@ -11,15 +11,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Morgan — Full-Stack Developer & Designer",
+  title: "Toby Carlson — Full-Stack Developer & Designer",
   description:
-    "Personal portfolio of Alex Morgan — building beautiful, performant web experiences with modern technologies.",
+    "Personal portfolio of Toby Carlson — building beautiful, performant web experiences with modern technologies.",
   keywords: ["portfolio", "developer", "designer", "full-stack", "Next.js", "React"],
-  authors: [{ name: "Alex Morgan" }],
+  authors: [{ name: "Toby Carlson" }],
   openGraph: {
-    title: "Alex Morgan — Full-Stack Developer & Designer",
+    title: "Toby Carlson — Full-Stack Developer & Designer",
     description:
-      "Personal portfolio of Alex Morgan — building beautiful, performant web experiences with modern technologies.",
+      "Personal portfolio of Toby Carlson — building beautiful, performant web experiences with modern technologies.",
     type: "website",
   },
 };
